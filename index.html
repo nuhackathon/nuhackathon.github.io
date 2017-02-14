@@ -6,12 +6,16 @@
   <meta name="keywords" content="HTML,CSS,XML,JavaScript">
   <meta name="author" content="John Doe">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="js/drinking.js"></script>
 <title>NU HACKATHON</title>
 <!-- 1040656216313-0bid9qr93j2eheqal3u6t053lustd5s5.apps.googleusercontent.com -->
 <!-- 9SCmS78djImYR91L5KLOSjY9 -->
 <style>
 
-
+.twhite{
+color:white
+}
 .footer {
    position:fixed;
     bottom:0;
@@ -110,39 +114,43 @@ a:hover { background: rgba(0,0,0,0.9); }
 	  <div class="bwhit">
 	  
 	  <!-- Text 1-->
-	 
+	  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type="text" id="gender" >
+        <label class="mdl-textfield__label" for="gender">คำนำหน้าชื่อ </label>
+      </div>
+	  
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="text" id="name">
+        <input class="mdl-textfield__input" type="text" id="name" >
         <label class="mdl-textfield__label" for="name">ชื่อ-สกุล..</label>
       </div>
 	  
 	   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="text" id="email">
+        <input class="mdl-textfield__input" type="text" id="email" >
         <label class="mdl-textfield__label" for="email">อีเมล์..</label>
       </div>
 	  
 	    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="phone">
+        <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="phone" >
         <label class="mdl-textfield__label" for="phone">เบอร์โทรศัพท์...</label>
         <span class="mdl-textfield__error">กรุณากรอกเฉพาะตัวเลข!</span>
 		
       </div>
 	   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="text" id="work">
-        <label class="mdl-textfield__label" for="work">อาชีพของคุณคือ..</label>
+        <input class="mdl-textfield__input" type="text" id="job" >
+        <label class="mdl-textfield__label" for="job">อาชีพของคุณคือ..</label>
       </div>
 	    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="text" id="under">
+        <input class="mdl-textfield__input" type="text" id="under" >
         <label class="mdl-textfield__label" for="under">คุณสังกัดที่ไหน..</label>
       </div>
 	    <div class="mdl-textfield mdl-js-textfield">
-		<textarea class="mdl-textfield__input" type="text" rows= "3" id="why" ></textarea>
-		<label class="mdl-textfield__label" for="why">แนะนำตัวเองให้เรารู้จัก..</label>
+		<textarea class="mdl-textfield__input" type="text" rows= "3" id="interview" ></textarea>
+		<label class="mdl-textfield__label" for="interview">แนะนำตัวเองให้เรารู้จัก..</label>
 	  </div>
 
 		   <!-- Accent-colored raised button with ripple -->
 		<br>
-		<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+		<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick="insert()">
 		  ฉันขอเข้าร่วมกิจกรรม
 		</button>
 		</div><br>
@@ -155,8 +163,8 @@ a:hover { background: rgba(0,0,0,0.9); }
 	   
 			<h4>
 			 เปิดรับสมัคร :<br>
-			  15 กุมภาพันธ์ -<br>
-			   5 มีนาคม 2560
+			  1 มีนาคม -<br>
+			   20 มีนาคม 2560
 			</h4>
 		
 	
@@ -189,7 +197,7 @@ a:hover { background: rgba(0,0,0,0.9); }
 		
 			<h4>
 			  ประกาศรางวัล :<br>
-			8 เมษายน 2560<br>
+			9 เมษายน 2560<br>
 			
 			</h4>
 		 </div>
@@ -199,7 +207,23 @@ a:hover { background: rgba(0,0,0,0.9); }
 	
 	<div class="mdl-grid" align="center">
 	  <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-phone bgop" align="center">
-		<p>กิจกรรมนี้คืออะไร?</p>
+		<h4>กิจกรรมนี้คืออะไร?</h4>
+		<p>เวทีแห่งการเรียนรู้และสร้างสรรค์ผลงานด้วยเทคโนโลยีอันทันสมัย! แบบต่อเนื่องตลอด 48 ชั่วโมง โดยผู้เข้าร่วมกิจกรรมจะได้รับการอบรมความรู้ เทคโนโลยี และเทคนิคในการสร้างสรรค์ผลงาน
+		โดยทีมงานที่มีความเชี่ยวชาญ นอกจากนี้ผู้เข้าร่วมกิจกรรมทุกท่านยังมีโอกาสคว้ารางวัล ในการแข่งขันประกวดผลงาน อีกด้วย</p>
+		
+		
+		
+	</div>
+	  
+	</div>
+	<div class="mdl-grid" >
+	  <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-phone bgop" >
+		<h4>ดาวน์โหลด</h4>
+		<a href="poster.pdf">โปสเตอร์กิจกรรม</a>
+		<a href="hackathon.pdf">รายละเอียดกิจกรรม</a>
+		<a href="schedule.pdf">กำหนดการกิจกรรม</a>
+		
+		
 		
 	</div>
 	  
@@ -210,7 +234,7 @@ a:hover { background: rgba(0,0,0,0.9); }
 	
 <video playsinline autoplay muted loop poster="images/more-from-1.png" id="bgvid">
 <source src="vid/vid1.webm" type="video/webm">
-<source src="vid/bg.mp4" type="video/mp4">
+<source src="vid/bgu.mp4" type="video/mp4">
 </video> 
 
 
