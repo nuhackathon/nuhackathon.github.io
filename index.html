@@ -9,6 +9,39 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://nuhackathon.github.io/js/drinking.js"></script>
 <title>NU HACKATHON</title>
+
+<script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCa2dJkMkXdH7Q4lnGKa1A2gSXnSQx-xIM",
+    authDomain: "nuhackathon.firebaseapp.com",
+    databaseURL: "https://nuhackathon.firebaseio.com",
+    storageBucket: "nuhackathon.appspot.com",
+    messagingSenderId: "262300630894"
+  };
+  firebase.initializeApp(config);
+ function writeUserData(){
+	var name = $("#name").val();
+	var email = $("#email").val();
+	var phone = $("#phone").val();
+	var job = $("#job").val();
+	var under = $("#under").val();
+	var interview = $("#interview").val();
+	var gender = $("#gender").val();
+	var database = firebase.database();
+  firebase.database().ref().set({
+    prefix: gender,
+    name: name,
+	email: email,
+	phone: phone,
+	job: job,
+	under: under,
+   interview : interview
+  });
+  alert("ระบบยืนยันการลงทะเบียน กรุณารอรับการตอบรับผ่านอีเมล์");
+}
+</script>
 <!-- 1040656216313-0bid9qr93j2eheqal3u6t053lustd5s5.apps.googleusercontent.com -->
 <!-- 9SCmS78djImYR91L5KLOSjY9 -->
 <style>
@@ -86,6 +119,10 @@ a:hover { background: rgba(0,0,0,0.9); }
   #bgvid, #polina button { display: none; }
   div{width:70%;} 
 }
+iframe {
+    display:block;
+    width:100%;
+}
 </style>
 <meta charset=utf-8>
     <!-- Material Design Lite -->
@@ -98,128 +135,58 @@ a:hover { background: rgba(0,0,0,0.9); }
 
    <div class="mdl-grid wth ">
       <div class="mdl-cell mdl-cell--8-col mdl-cell--8-col-tablet mdl-cell--12-col-phone bgop" align="center">
-	  <div class="mdl-grid wth">
-	  <div class="mdl-cell mdl-cell--2-col mdl-cell--6-col-tablet mdl-cell--4-col-phone"  align="center">
-	   
-	  </div>
-	  <div class="mdl-cell mdl-cell--2-col mdl-cell--6-col-tablet mdl-cell--4-col-phone"  align="center">
-	   <img src="images/NU_LOGO.png" width="100%">
-	  </div>
-	  <div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet mdl-cell--4-col-phone " >
+	  
+		  <div class="mdl-grid" align="center">
+	  <div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--12-col-phone " align="center">
+	 
+	</div>
+	  <div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--12-col-phone " align="center">
+	 <img src="img/most.png" width="100%">
+	</div>
+	  <div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--12-col-phone " align="center">
+ <img src="img/start.png" width="100%">
+	</div>
+	 <div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--12-col-phone " align="center">
+	 <img src="img/nu.png" width="100%">
+	</div>
+	  <div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--12-col-phone " align="center">
+	 <img src="img/sci.png" width="100%">
+	</div>
+<div class="mdl-grid wth">
+
+	  <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-phone " >
 	  <h1><b>NU HACKATHON</h1></b>
 	  </div>
 	  </div>
-	 
-	   <h4 class = "c_center">ลงชื่อสมัครเข้าร่วมกิจกรรม</h4>
-	  <div class="bwhit">
-	  
-	  <!-- Text 1-->
-	  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="text" id="gender" >
-        <label class="mdl-textfield__label" for="gender">คำนำหน้าชื่อ </label>
-      </div>
-	  
-      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="text" id="name" >
-        <label class="mdl-textfield__label" for="name">ชื่อ-สกุล..</label>
-      </div>
-	  
-	   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="text" id="email" >
-        <label class="mdl-textfield__label" for="email">อีเมล์..</label>
-      </div>
-	  
-	    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="phone" >
-        <label class="mdl-textfield__label" for="phone">เบอร์โทรศัพท์...</label>
-        <span class="mdl-textfield__error">กรุณากรอกเฉพาะตัวเลข!</span>
+	</div>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSew7QL2SnlCy8eTC6qdtGyopsi0gpHzFbT9cQuSsqXFaM36dw/viewform?embedded=true" 
+width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
 		
-      </div>
-	   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="text" id="job" >
-        <label class="mdl-textfield__label" for="job">อาชีพของคุณคือ..</label>
-      </div>
-	    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="text" id="under" >
-        <label class="mdl-textfield__label" for="under">คุณสังกัดที่ไหน..</label>
-      </div>
-	    <div class="mdl-textfield mdl-js-textfield">
-		<textarea class="mdl-textfield__input" type="text" rows= "3" id="interview" ></textarea>
-		<label class="mdl-textfield__label" for="interview">แนะนำตัวเองให้เรารู้จัก..</label>
-	  </div>
-
-		   <!-- Accent-colored raised button with ripple -->
+		
 		<br>
-		<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick="wait()">
-		  ฉันขอเข้าร่วมกิจกรรม
-		</button>
-		</div><br>
-	  
+
+
+	
 	  </div>
       <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-cell--12-col-phone " align="center">
-	  <h4 class = "c_center">กำหนดการกิจกรรม</h4>
-	<div class="mdl-grid" align="center">
-	  <div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet mdl-cell--12-col-phone bgop" align="center">
-	   
-			<h4>
-			 เปิดรับสมัคร :<br>
-			  1 มีนาคม -<br>
-			   20 มีนาคม 2560
-			</h4>
-		
-	
-	</div>
-	  <div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet mdl-cell--12-col-phone bgop" align="center">    <!-- Event card -->
-
-			<h4>
-			  อบรมความรู้ :<br>
-			 24 มีนาคม -<br>
-			  26 มีนาคม 2560
-			</h4>
-		</div>
 	  
-	</div>
-	
-	<div class="mdl-grid" align="center">
-	  <div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet mdl-cell--12-col-phone bgop" align="center">
-	     <!-- Event card -->
+	  	<div class="mdl-grid" >
+	  <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-phone bgop" >
 		
-			<h4>
-			 พัฒนาผลงาน :<br>
-			
-			  8 เมษายน -<br>
-			  9  เมษายน 2560
-			</h4>
-		 
-	
-	</div>
-	  <div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet mdl-cell--12-col-phone bgop" align="center">    <!-- Event card -->
+		 <img src="download/hackathon.jpg" width="100%">
 		
-			<h4>
-			  ประกาศรางวัล :<br>
-			9 เมษายน 2560<br>
-			
-			</h4>
-		 </div>
-	  
-	</div>
-	
-	
-	<div class="mdl-grid" align="center">
-	  <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-phone bgop" align="center">
-		<h4>กิจกรรมนี้คืออะไร?</h4>
-		<p>เวทีแห่งการเรียนรู้และสร้างสรรค์ผลงานด้วยเทคโนโลยีอันทันสมัย! แบบต่อเนื่องตลอด 48 ชั่วโมง โดยผู้เข้าร่วมกิจกรรมจะได้รับการอบรมความรู้ เทคโนโลยี และเทคนิคในการสร้างสรรค์ผลงาน
-		โดยทีมงานที่มีความเชี่ยวชาญ และเข้าร่วมแข่งขันประกวดผลงานเพื่อชิงรางวัลอีกมากมาย!</p>
 		
 	</div>
 	  
 	</div>
+	  
+	  
 	<div class="mdl-grid" >
 	  <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-phone bgop" >
 		<h4>ดาวน์โหลด</h4>
-		<a href="poster.pdf">โปสเตอร์กิจกรรม</a>
-		<a href="hackathon.pdf">รายละเอียดกิจกรรม</a>
-		<a href="schedule.pdf">กำหนดการกิจกรรม</a>
+		<a href="download/hackathon.jpg">โปสเตอร์กิจกรรม</a>
+		<a href="download/nuhackathon.pdf">รายละเอียดกิจกรรม</a>
+		<a href="download/schedule.pdf">กำหนดการกิจกรรม</a>
 		
 		
 		

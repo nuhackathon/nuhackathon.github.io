@@ -1,3 +1,4 @@
+
 function insert(){
 	
 	var name = $("#name").val();
@@ -5,7 +6,7 @@ function insert(){
 	var phone = $("#phone").val();
 	var job = $("#job").val();
 	var under = $("#under").val();
-	var interview = $("#under").val();
+	var interview = $("#interview").val();
 	var JSONObject= {"gender":gender,"name":name,"email":email ,"phone":phone, "job":job ,"under":under,"interview":interview};
 	$.post( "//www.frontiertech.co.th:5003/regis",{infor: JSON.stringify(JSONObject)});
 	alert("ระบบยืนยันการลงทะเบียน กรุณารอรับการตอบรับผ่านอีเมล์");
